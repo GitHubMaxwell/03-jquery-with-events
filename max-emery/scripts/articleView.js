@@ -15,7 +15,7 @@ articleView.populateFilters = function () {
 
       // DONE TODO: Refactor this concatenation using a TEMPLATE LITERAL.
       // optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
-      optionTag = `<option value= ${authorName}> ${authorName} </option>`;
+      optionTag = `<option value="${authorName}">${authorName}</option>`;
 
 
       // if its not there / if it doesnt have an author then append the optiontag to the SAME attribute
@@ -30,7 +30,7 @@ articleView.populateFilters = function () {
 
       // DONE TODO: Refactor this concatenation using a template literal.
       // optionTag = '<option value="' + category + '">' + category + '</option>';
-      optionTag = `<option value= ${category}> ${category} </option>`;
+      optionTag = `<option value="${category}">${category}</option>`;
 
       if ($('#category-filter option[value="' + category + '"]').length === 0) {
         $('#category-filter').append(optionTag);
@@ -51,10 +51,12 @@ articleView.handleAuthorFilter = function () {
       // Use an "attribute selector" to find those articles, and fade them in for the reader.
       //event.currentTarget property // how to write teh callback function that passes the eveent object
 
-      /*
-      $(this).attr('').show();
-      $('data-author = this.authorName').show();
-      */
+ 
+      $('article').hide();
+      $(`article[data-author="${$(this).val()}"]`).show();
+
+      // $(this).attr('').show();
+      // $('data-author = this.authorName').show();
 
       /*
       $(select).on('click', function () {
