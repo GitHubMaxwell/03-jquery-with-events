@@ -51,24 +51,15 @@ articleView.handleAuthorFilter = function () {
       // Use an "attribute selector" to find those articles, and fade them in for the reader.
       //event.currentTarget property // how to write teh callback function that passes the eveent object
 
- 
       $('article').hide();
       $(`article[data-author="${$(this).val()}"]`).show();
-
-      // $(this).attr('').show();
-      // $('data-author = this.authorName').show();
-
-      /*
-      $(select).on('click', function () {
-        If (articles data-category !== selected category)
-             hide those articles
-      })
-      */
 
     } else {
       // TODO: If the <select> menu was changed to an option that is blank, we should first SHOW ALL the articles, EXCEPT the one article we are using as a template.
       //show all articles
       //hide template
+      $('article').show();
+      $('.template').hideClass();
 
       //hide the template article and show all articles
 
